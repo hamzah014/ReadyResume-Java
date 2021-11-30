@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTemplateTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+            <!-- Masthead -->
+            <header class="masthead bg-info text-white text-center">
+                <div class="container d-flex align-items-center flex-column">
+
+
+                    <!-- Masthead Heading -->
+                    <h1 class="masthead-heading text-uppercase mb-0">Template</h1>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <!-- Masthead Subheading -->
+                    <p class="masthead-subheading font-weight-light mb-0">Details of the tajuk!</p>
+
+                </div>
+            </header>
+
+            <!-- About Section -->
+            <section class="">
+                <div class="container">
+
+                    <!-- About Section Content -->
+                    <div class="row">
+                        <div class="col-12">
+
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form>
+                                <h:panelGrid columns="2">
+                                    <h:outputLabel value="#{bundle.CreateTemplateLabel_id}" for="id" />
+                                    <h:inputText id="id" value="#{templateController.selected.id}" title="#{bundle.CreateTemplateTitle_id}" required="true" requiredMessage="#{bundle.CreateTemplateRequiredMessage_id}"/>
+                                    <h:outputLabel value="#{bundle.CreateTemplateLabel_name}" for="name" />
+                                    <h:inputText id="name" value="#{templateController.selected.name}" title="#{bundle.CreateTemplateTitle_name}" required="true" requiredMessage="#{bundle.CreateTemplateRequiredMessage_name}"/>
+                                    <h:outputLabel value="#{bundle.CreateTemplateLabel_details}" for="details" />
+                                    <h:inputText id="details" value="#{templateController.selected.details}" title="#{bundle.CreateTemplateTitle_details}" required="true" requiredMessage="#{bundle.CreateTemplateRequiredMessage_details}"/>
+                                    <h:outputLabel value="#{bundle.CreateTemplateLabel_pathfile}" for="pathfile" />
+                                    <h:inputText id="pathfile" value="#{templateController.selected.pathfile}" title="#{bundle.CreateTemplateTitle_pathfile}" required="true" requiredMessage="#{bundle.CreateTemplateRequiredMessage_pathfile}"/>
+                                    <h:outputLabel value="#{bundle.CreateTemplateLabel_preimage}" for="preimage" />
+                                    <h:inputText id="preimage" value="#{templateController.selected.preimage}" title="#{bundle.CreateTemplateTitle_preimage}" required="true" requiredMessage="#{bundle.CreateTemplateRequiredMessage_preimage}"/>
+                                </h:panelGrid>
+                                <br />
+                                <h:commandLink action="#{templateController.create}" value="#{bundle.CreateTemplateSaveLink}" />
+                                <br />
+                                <br />
+                                <h:commandLink action="#{templateController.prepareList}" value="#{bundle.CreateTemplateShowAllLink}" immediate="true"/>
+                                <br />
+                                <br />
+                                <h:link outcome="/index" value="#{bundle.CreateTemplateIndexLink}"/>
+                            </h:form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>

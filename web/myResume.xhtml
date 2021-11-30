@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="My Resume"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+
+            <!-- Masthead -->
+            <header class="masthead bg-info text-white text-center">
+                <div class="container d-flex align-items-center flex-column">
+                    <!-- Masthead Heading -->
+                    <h1 class="masthead-heading text-uppercase mb-0">My Resume</h1>
+                    <!-- Icon Divider -->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Masthead Subheading -->
+                    <p class="masthead-subheading font-weight-light mb-0">Increase your chances of finding a job and create your Resume with one of our professionally designed ReadyResume templates.</p>
+                </div>
+            </header>
+
+
+            <!-- Portfolio Section -->
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+
+                    <!-- Portfolio Section Heading -->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><span class="circle-border">1</span> CHOOSE YOUR TEMPLATE</h2>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-lg-6">
+                            <div class="portfolio-item mx-auto border border-dark" onclick="viewtemplate()">
+                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class="portfolio-item-caption-content text-center text-white">
+                                        <h4>Simple Resume</h4>
+                                        <p>This is the simple template for resume.</p>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-border" alt="Template Image" library="img" name="preimage/template.jpg" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </section>
+
+            <div style="display:none;" id="openview" class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                Open modal
+            </div>
+
+            <!-- Portfolio Modal 1 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                &#x58;
+                            </span>
+                        </button>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div id="view_area">
+                                            <!-- Portfolio Modal - Title -->
+                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Simple Resume</h2>
+                                            <!-- Icon Divider -->
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line"></div>
+                                                <div class="divider-custom-icon">
+                                                    &#128240;
+                                                </div>
+                                                <div class="divider-custom-line"></div>
+                                            </div>
+                                            <!-- Portfolio Modal - Image -->
+                                            <h:graphicImage class="img-fluid rounded mb-5 img-border" alt="Template Image" library="img" name="preimage/template.jpg" />
+                                            <!-- Portfolio Modal - Text -->
+                                            <p class="mb-5">This is the simple template for resume.</p>
+
+                                        </div>
+                                        <h:form target="_blank" class="text-center" id="form-template">
+                                            <h:commandButton id="form-template-btn" class="btn btn-success"  action="#{templateController.prepareView}" value="&#xFFEB;Proceed With Template" />
+                                        </h:form>
+                                        <button class="btn btn-danger" href="#" data-dismiss="modal">
+                                            &#x58;
+                                            Close Window
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+
+                function viewtemplate() {
+
+                    document.getElementById("openview").click();
+
+                }
+
+            </script>
+
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Simple Resume</title>
+
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+        <h:outputStylesheet library="css" name="resume.css" />
+
+        <style>
+            @media print {
+                .noPrint{
+                    display:none;
+                }
+            }
+            @page { size: auto;  margin: 0mm; }
+
+            .text-danger{
+                color:red;
+            }
+
+        </style>
+
+    </h:head>
+    <h:body>
+
+        <div id="doc2" class="yui-t7">
+
+            <div class="noPrint row">
+                <a id="pdf" href="#" onclick="printpage()">Download PDF</a>
+            </div>
+
+            <div id="inner">
+
+                <div id="hd">
+                    <h:form>
+                        <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.profileItems.rowCount == 0}"/>
+
+                        <c:forEach items="#{templateController.profileItems.wrappedData}" var="item">
+                            <div class="yui-gc">
+                                <div class="yui-u first">
+                                    <h1><h:outputText value="#{item.name}"/></h1>
+                                    <p>
+                                        <h:outputText value="#{item.birthdate}">
+                                            <f:convertDateTime pattern="dd MMM yyyy" />
+                                        </h:outputText> 
+                                        (<h:outputText value="#{item.age}"/> years old)
+                                    </p>
+                                </div>
+
+                                <div class="yui-u">
+                                    <div class="contact-info">
+                                        <h3><h:outputText value="#{item.address}"/></h3>
+                                        <h3><u><h:outputText value="#{item.email}"/></u></h3>
+                                    </div><!--// .contact-info -->
+                                </div>
+                            </div><!--// .yui-gc -->
+                        </c:forEach>
+                    </h:form>
+                </div><!--// hd -->
+
+                <div id="bd">
+                    <div id="yui-main">
+                        <div class="yui-b">
+
+                            <div class="yui-gf">
+
+                                <h:form>
+
+                                    <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.descItems.rowCount == 0}"/>
+                                    <c:forEach items="#{templateController.descItems.wrappedData}" var="item">
+                                        <div class="yui-u first">
+                                            <h2>About me</h2>
+                                        </div>
+                                        <div class="yui-u">
+                                            <p class="enlarge">
+                                                <h:outputText value="#{item.description}"/>
+                                            </p>
+                                        </div>
+
+                                    </c:forEach>
+                                </h:form>
+                            </div><!--// .yui-gf -->
+
+                            <div class="yui-gf">
+                                <div class="yui-u first">
+                                    <h2>Education</h2>
+                                </div>
+
+                                <h:form>
+                                    <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.eduItems.rowCount == 0}"/>
+
+                                    <c:forEach items="#{templateController.eduItems.wrappedData}" var="item">
+                                        <div class="yui-u" style="padding-bottom:15px">
+                                            <h2><b><h:outputText value="#{item.level}"/></b> , <h:outputText value="#{item.institution}"/></h2>
+                                            <h3>
+                                                <h:outputText value="#{item.startDate}">
+                                                    <f:convertDateTime pattern="dd MMM yyyy" />
+                                                </h:outputText> 
+                                                - 
+                                                <h:outputText value="#{item.endDate}">
+                                                    <f:convertDateTime pattern="dd MMM yyyy" />
+                                                </h:outputText>
+                                            </h3>
+                                            <p><h:outputText value="#{item.details}"/></p>
+                                        </div>
+
+                                    </c:forEach>
+                                </h:form>
+
+
+                            </div><!--// .yui-gf -->
+
+
+                            <div class="yui-gf">
+                                <div class="yui-u first">
+                                    <h2>Skills</h2>
+                                </div>
+                                <div class="yui-u">
+                                    <h:form>
+                                        <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.skillItems.rowCount == 0}"/>
+
+                                        <c:forEach items="#{templateController.skillItems.wrappedData}" var="item">
+
+
+                                            <div class="talent">
+                                                <h2><h:outputText value="#{item.name}"/></h2>
+                                                <p><h:outputText value="#{item.details}"/></p>
+                                            </div>
+
+
+                                        </c:forEach>
+
+                                    </h:form>
+
+                                </div>
+                            </div><!--// .yui-gf -->
+
+                            <div class="yui-gf">
+
+                                <div class="yui-u first">
+                                    <h2>Experience</h2>
+                                </div><!--// .yui-u -->
+
+                                <div class="yui-u">
+
+                                    <h:form>
+                                        <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.expItems.rowCount == 0}"/>
+
+                                        <c:forEach items="#{templateController.expItems.wrappedData}" var="item">
+                                            <div class="job">
+                                                <h2><h:outputText value="#{item.position}"/></h2>
+                                                <h3><h:outputText value="#{item.company}"/></h3>
+                                                <h4>
+                                                    <h:outputText value="#{item.startDate}">
+                                                        <f:convertDateTime pattern="dd MMM yyyy" />
+                                                    </h:outputText> 
+                                                    - 
+                                                    <h:outputText value="#{item.endDate}">
+                                                        <f:convertDateTime pattern="dd MMM yyyy" />
+                                                    </h:outputText>
+                                                </h4>
+                                                <p><h:outputText value="#{item.details}"/></p>
+                                            </div>
+
+                                        </c:forEach>
+                                    </h:form>
+                                </div><!--// .yui-u -->
+                            </div><!--// .yui-gf -->
+
+                            <div class="yui-gf last">
+
+                                <div class="yui-u first">
+                                    <h2>Certificate</h2>
+                                </div><!--// .yui-u -->
+
+                                <div class="yui-u">
+
+                                    <h:form>
+                                        <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.certItems.rowCount == 0}"/>
+
+                                        <c:forEach items="#{templateController.certItems.wrappedData}" var="item">
+
+                                            <div class="job">
+                                                <h2><h:outputText value="#{item.name}"/></h2>
+                                                <h3><h:outputText value="#{item.date}"/></h3>
+                                                <p><h:outputText value="#{item.details}"/></p>
+                                            </div>
+
+
+                                        </c:forEach>
+                                    </h:form>
+
+
+                                </div><!--// .yui-u -->
+                            </div><!--// .yui-gf -->
+
+
+                        </div><!--// .yui-b -->
+                    </div><!--// yui-main -->
+                </div><!--// bd -->
+
+                <h:form>
+                    <h:outputText class="text-danger" escape="false" value="Please add/update your information to display here." rendered="#{templateController.profileItems.rowCount == 0}"/>
+
+                                        <c:forEach items="#{templateController.profileItems.wrappedData}" var="item">
+                        <div id="ft">
+                            <p><h:outputText value="#{item.name}"/> &mdash; <u><h:outputText value="#{item.email}"/></u></p>
+                            <p><h:outputText value="#{item.address}"/></p>
+                        </div><!--// footer -->
+
+                    </c:forEach>
+                </h:form>
+
+            </div><!-- // inner -->
+
+
+        </div><!--// doc -->
+        <script>
+            function printpage() {
+
+                window.print();
+
+            }
+
+        </script>
+
+    </h:body>
+
+
+
+
+
+
+
+
+
+</html>

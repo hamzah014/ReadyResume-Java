@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+
+        <style>
+
+            .btn-cmd{
+
+                background-color: #17a2b8;
+            }
+
+            .btn-cmd, .btn:hover {
+                text-decoration: underline;
+            }
+
+        </style>
+
+    </h:head>
+    <h:body>
+
+        <ul class="tabs">
+            <li>
+                <h:form class="text-center" id="form-info">
+                    <h:commandButton id="form-desc-btn" class="btn btn-cmd text-white" action="#{userProfileController.prepareView}" value="Basic Info" />
+                </h:form>
+            </li>
+            <li>
+                <h:form class="text-center" id="form-desc">
+                    <h:commandButton id="form-desc-btn" class="btn btn-cmd text-white" action="#{profileDescController.checkProfileDesc}" value="Description" />
+                </h:form>
+            </li>
+            <li>
+                <h:form class="text-center" id="form-edu">
+                    <h:commandButton id="form-edu-btn" class="btn btn-cmd text-white" action="#{educationController.prepareList}" value="Education" />
+                </h:form>
+            </li>
+            <li>
+                <h:form class="text-center" id="form-cert">
+                    <h:commandButton id="form-cert-btn" class="btn btn-cmd text-white" action="#{certificateController.prepareList}" value="Certificates" />
+                </h:form>
+            </li>
+            <li>
+                <h:form class="text-center" id="form-exp">
+                    <h:commandButton id="form-exp-btn" class="btn btn-cmd text-white" action="#{experienceController.prepareList}" value="Experiences" />
+                </h:form>
+            </li>
+            <li>
+                <h:form class="text-center" id="form-skill">
+                    <h:commandButton id="form-skill-btn" class="btn btn-cmd text-white" action="#{skillsController.prepareList}" value="Skills" />
+                </h:form>
+            </li>
+            <li class="tab-pasw">
+                <h:form class="text-center" id="form-users">
+                    <h:commandButton id="form-users-btn" class="btn text-white" action="#{usersController.prepareEdit}" value="Account" />
+                </h:form>
+            </li>
+        </ul>
+
+
+
+
+    </h:body>                          
+
+</html>
+

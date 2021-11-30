@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Home"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <ui:include src="/partial/banner.xhtml" />
+            <!-- Masthead -->
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+
+                    <!-- Portfolio Section Heading -->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our Capabilities</h2>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <!-- Portfolio Grid Items -->
+                    <div class="row row-area">
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/click.svg" />
+                                <h3>Quick and easy resume builder</h3>
+                                <span>With our online resume maker, it is simple for anyone to quickly create a professional resume. Enter your personal details and begin filling out your resume content. 
+                                    Finally, choose one of our available resume layouts, and download your resume.</span>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/find.svg" />
+                                <h3>More likely to land a job</h3>
+                                <span>With a representative and professional resume, you will stand out amongst all other applicants. 
+                                    You are probably more likely to be invited to an interview with an professional Resume.</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- Portfolio Grid Items -->
+                    <div class="row row-area">
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/folder.svg" />
+                                <h3>Organize your applications</h3>
+                                <span>Often, it is important to be able to tailor your resume based on the job you wish to apply for. 
+                                    With ReadyResume, you can create several different resumes in an organised way through your own personal choice of templates.</span>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/no1.svg" />
+                                <h3>Best of The Best!</h3>
+                                <span>Our resume builder and its pre-generated content are tested by recruiters and experts. We help your resume become truly competitive in the hiring process.</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+
+
+
+            </section>
+
+
+            <!-- About Section -->
+            <section class="page-section bg-primary text-white mb-0" id="about">
+                <div class="container">
+
+                    <!-- About Section Content -->
+                    <div class="row">
+                        <div class="col ml-auto text-center">
+                            <h3>What are you waiting for?</h3>
+                            <p class="lead">Register now and create your own resume by choosing our available template!</p>
+                        </div>
+                    </div>
+
+                    <!-- About Section Button -->
+                    <div class="text-center mt-4">
+                        <h:link class="btn btn-xl btn-outline-light" outcome="/users/Create" value="&#128394; Register Now!"/>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Portfolio Section -->
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+
+                    <!-- Portfolio Section Heading -->
+                    <h2 class="text-center text-uppercase text-secondary mb-0">What do we provide in our resume?</h2>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#x3F;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <!-- Portfolio Grid Items -->
+                    <div class="row row-area">
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/info.svg" />
+                                <h3>Profile Information</h3>
+                                <span>Drop your information to let them know your basic information about you.</span>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/education.svg" />
+                                <h3>Education</h3>
+                                <span>List all your education history to exposed your level of knowledge.</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <!-- Portfolio Grid Items -->
+                    <div class="row row-area">
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/certificate.svg" />
+                                <h3>Certification</h3>
+                                <span>Put all your certificate that going to support you in making them confident with your abilities.</span>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/hiking.svg" />
+                                <h3>Experiences</h3>
+                                <span>Tell them about your experience and your journey! Let them know that you are the best!.</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+
+
+
+            </section>
+
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>

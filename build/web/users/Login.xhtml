@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+
+            <!-- Masthead -->
+            <header class="masthead bg-info text-white text-center">
+                <div class="container d-flex align-items-center flex-column">
+
+
+                    <!-- Masthead Heading -->
+                    <h1 class="masthead-heading text-uppercase mb-0">Login!</h1>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <!-- Masthead Subheading -->
+                    <p class="masthead-subheading font-weight-light mb-0">Join us to get more updated ReadyResume content!</p>
+
+                </div>
+            </header>
+
+            <!-- Portfolio Section -->
+            <section class="page-section portfolio" id="register">
+                <div class="container">
+
+                    <!-- Portfolio Section Heading -->
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">LOGIN HERE!</h2>
+
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            &#11088;
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <!-- Contact Section Form -->
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            #{sessionScope['userid']}
+                            <h:form>
+                                <div class="control-group">
+                                    <div class="form-group mb-0 pb-2">
+                                        <h:outputLabel value="#{bundle.CreateUsersLabel_email}" for="email" />
+                                        <h:inputText class="form-control" id="email" value="#{usersController.selected.email}" title="#{bundle.CreateUsersTitle_email}" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_email}"/>
+
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="form-group mb-0 pb-2">
+                                        <h:outputLabel value="#{bundle.CreateUsersLabel_password}" for="password" />
+                                        <h:inputText class="form-control" id="password" value="#{usersController.selected.password}" title="#{bundle.CreateUsersTitle_password}" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_password}"/>
+
+                                    </div>
+                                </div>
+                                <br/>
+                                <div id="success"></div>
+                                <div class="form-group">
+                                    <h:commandLink class="btn btn-primary btn-xl" action="#{usersController.login}" value="#{bundle.LoginUserLink}" />
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+            
+
+            <!-- About Section -->
+            <section class="page-section bg-primary text-white mb-0" id="about">
+                <div class="container">
+
+                    <!-- About Section Content -->
+                    <div class="row">
+                        <div class="col ml-auto text-center">
+                            <h3>What are you waiting for?</h3>
+                            <p class="lead">Register now and create your own resume by choosing our available template!</p>
+                        </div>
+                    </div>
+
+                    <!-- About Section Button -->
+                    <div class="text-center mt-4">
+                        <h:link class="btn btn-xl btn-outline-light" outcome="/users/Create" value="&#128394; Register Now!"/>
+                    </div>
+
+                </div>
+            </section>
+            
+        </ui:define>
+    </ui:composition>
+
+</html>

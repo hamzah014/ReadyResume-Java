@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+
+        <!-- Custom fonts for this theme -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+        <h:outputStylesheet library="css" name="freelancer.min.css"></h:outputStylesheet>
+        <h:outputStylesheet library="vendor" name="all.min.css"></h:outputStylesheet>
+        
+        <style>
+            .list-border{
+                border:1px solid black;
+                box-shadow: 5px 10px #888888;
+                text-align:center;
+                padding:20px;
+            }
+
+            .img-icon{
+                width:30%;
+            }
+
+            .row-area {
+                display: grid;
+                grid-auto-flow: column;
+                gap: 5%;
+                padding-top:50px;
+            }
+
+            .shadow-primary{
+                border:1px solid #2c3e50;
+                box-shadow: 5px 10px #2c3e50;
+                text-align:center;
+                padding:30px;
+            }
+
+
+            .blog-comment::before,
+            .blog-comment::after,
+            .blog-comment-form::before,
+            .blog-comment-form::after{
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .blog-comment{
+                padding-left: 15%;
+                padding-right: 15%;
+            }
+
+            .blog-comment ul{
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .blog-comment img{
+                opacity: 1;
+                filter: Alpha(opacity=100);
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -o-border-radius: 4px;
+                border-radius: 4px;
+            }
+
+            .blog-comment img.avatar {
+                position: relative;
+                float: left;
+                margin-left: 0;
+                margin-top: 0;
+                width: 65px;
+                height: 65px;
+            }
+
+            .blog-comment .post-comments{
+                border: 1px solid #eee;
+                margin-bottom: 20px;
+                margin-left: 85px;
+                margin-right: 0px;
+                padding: 10px 20px;
+                position: relative;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -o-border-radius: 4px;
+                border-radius: 4px;
+                background: #fff;
+                color: #6b6e80;
+                position: relative;
+            }
+
+            .blog-comment .meta {
+                font-size: 13px;
+                color: #aaaaaa;
+                padding-bottom: 8px;
+                margin-bottom: 10px !important;
+                border-bottom: 1px solid #eee;
+            }
+
+            .blog-comment ul.comments ul{
+                list-style-type: none;
+                padding: 0;
+                margin-left: 85px;
+            }
+
+            .blog-comment-form{
+                padding-left: 15%;
+                padding-right: 15%;
+                padding-top: 40px;
+            }
+
+            .blog-comment h3,
+            .blog-comment-form h3{
+                margin-bottom: 40px;
+                font-size: 26px;
+                line-height: 30px;
+                font-weight: 800;
+            }
+
+            .circle-border {
+                padding:30px;
+                border:5px solid black;
+                border-radius: 90%;
+                display: inline-block;
+            }
+
+        </style>
+    </h:head>
+    <h:body id="page-top">
+
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Home</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Login/Register</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">My Resume</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">My Profile</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead -->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <h:graphicImage class="masthead-avatar mb-5" library="img" name="cv.svg"></h:graphicImage>
+
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0">ReadyResume</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        &#11088;
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Masthead Subheading -->
+                <p class="masthead-subheading font-weight-light mb-0">Get Your Resume Ready and Neat!</p>
+
+                <!-- About Section Button -->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="register.php">
+                        &#128394;
+                        Register now!
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Portfolio Section -->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+
+                <!-- Portfolio Section Heading -->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our Capabilities</h2>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        &#11088;
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <!-- Portfolio Grid Items -->
+                <div class="row row-area">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col list-border">
+                        <div class="portfolio-item mx-auto">
+                            <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class=" text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <h:graphicImage class="img-fluid img-icon" library="img" name="icon/click.svg"></h:graphicImage>
+                            <h3>Quick and easy resume builder</h3>
+                            <span>With our online resume maker, it is simple for anyone to quickly create a professional resume. Enter your personal details and begin filling out your resume content. 
+                                Finally, choose one of our available resume layouts, and download your resume.</span>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col list-border">
+                        <div class="portfolio-item mx-auto">
+                            <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class=" text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <h:graphicImage class="img-fluid img-icon" library="img" name="icon/find.svg"></h:graphicImage>
+                            <h3>More likely to land a job</h3>
+                            <span>With a representative and professional resume, you will stand out amongst all other applicants. 
+                                You are probably more likely to be invited to an interview with an professional Resume.</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Portfolio Grid Items -->
+                <div class="row row-area">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col list-border">
+                        <div class="portfolio-item mx-auto">
+                            <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class=" text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <h:graphicImage class="img-fluid img-icon" library="img" name="icon/folder.svg"></h:graphicImage>
+                            <h3>Organize your applications</h3>
+                            <span>Often, it is important to be able to tailor your resume based on the job you wish to apply for. 
+                                With ReadyResume, you can create several different resumes in an organised way through your own personal choice of templates.</span>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="col list-border">
+                        <div class="portfolio-item mx-auto">
+                            <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class=" text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <h:graphicImage class="img-fluid img-icon" library="img" name="icon/no1.svg"></h:graphicImage>
+                            <h3>Best of The Best!</h3>
+                            <span>Our resume builder and its pre-generated content are tested by recruiters and experts. We help your resume become truly competitive in the hiring process.</span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+
+
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+
+                <!-- About Section Content -->
+                <div class="row">
+                    <div class="col ml-auto text-center">
+                        <h3>What are you waiting for?</h3>
+                        <p class="lead">Register now and create your own resume by choosing our available template!</p>
+                    </div>
+                </div>
+
+                <!-- About Section Button -->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="register.php">
+                        &#128394;
+                        Register now!
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Copyright Section -->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container">
+                <small>Copyright &copy; ReadyResume 2021</small>
+            </div>
+        </section>
+
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+        <div class="scroll-to-top d-lg-none position-fixed ">
+            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#mainNav">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
+
+
+
+    </h:body>
+
+
+
+    <h:outputScript library="vendor" name="jquery/jquery.min.js"></h:outputScript>
+    <h:outputScript library="vendor" name="bootstrap/js/bootstrap.bundle.min.js"></h:outputScript>
+    <h:outputScript library="vendor" name="jquery-easing/jquery.easing.min.js"></h:outputScript>
+    <h:outputScript library="js" name="jqBootstrapValidation.js"></h:outputScript>
+    <h:outputScript library="js" name="contact_me.js"></h:outputScript>
+
+    <h:outputScript library="js" name="freelancer.min.js"></h:outputScript>
+
+</html>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEducationTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEducationLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{educationController.selected.id}" title="#{bundle.EditEducationTitle_id}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_level}" for="level" />
+                    <h:inputText id="level" value="#{educationController.selected.level}" title="#{bundle.EditEducationTitle_level}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_level}"/>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_institution}" for="institution" />
+                    <h:inputText id="institution" value="#{educationController.selected.institution}" title="#{bundle.EditEducationTitle_institution}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_institution}"/>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_startDate}" for="startDate" />
+                    <h:inputText id="startDate" value="#{educationController.selected.startDate}" title="#{bundle.EditEducationTitle_startDate}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_startDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_endDate}" for="endDate" />
+                    <h:inputText id="endDate" value="#{educationController.selected.endDate}" title="#{bundle.EditEducationTitle_endDate}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_endDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_details}" for="details" />
+                    <h:inputTextarea rows="4" cols="30" id="details" value="#{educationController.selected.details}" title="#{bundle.EditEducationTitle_details}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_details}"/>
+                    <h:outputLabel value="#{bundle.EditEducationLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{educationController.selected.userid}" title="#{bundle.EditEducationTitle_userid}" required="true" requiredMessage="#{bundle.EditEducationRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{educationController.update}" value="#{bundle.EditEducationSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEducationViewLink}"/>
+                <br />
+                <h:commandLink action="#{educationController.prepareList}" value="#{bundle.EditEducationShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEducationIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

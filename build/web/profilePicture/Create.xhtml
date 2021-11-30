@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProfilePictureTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProfilePictureLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{profilePictureController.selected.id}" title="#{bundle.CreateProfilePictureTitle_id}" required="true" requiredMessage="#{bundle.CreateProfilePictureRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateProfilePictureLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{profilePictureController.selected.name}" title="#{bundle.CreateProfilePictureTitle_name}" required="true" requiredMessage="#{bundle.CreateProfilePictureRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.CreateProfilePictureLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{profilePictureController.selected.userid}" title="#{bundle.CreateProfilePictureTitle_userid}" required="true" requiredMessage="#{bundle.CreateProfilePictureRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{profilePictureController.create}" value="#{bundle.CreateProfilePictureSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{profilePictureController.prepareList}" value="#{bundle.CreateProfilePictureShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProfilePictureIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

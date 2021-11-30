@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEducationTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEducationLabel_id}"/>
+                    <h:outputText value="#{educationController.selected.id}" title="#{bundle.ViewEducationTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewEducationLabel_level}"/>
+                    <h:outputText value="#{educationController.selected.level}" title="#{bundle.ViewEducationTitle_level}"/>
+                    <h:outputText value="#{bundle.ViewEducationLabel_institution}"/>
+                    <h:outputText value="#{educationController.selected.institution}" title="#{bundle.ViewEducationTitle_institution}"/>
+                    <h:outputText value="#{bundle.ViewEducationLabel_startDate}"/>
+                    <h:outputText value="#{educationController.selected.startDate}" title="#{bundle.ViewEducationTitle_startDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEducationLabel_endDate}"/>
+                    <h:outputText value="#{educationController.selected.endDate}" title="#{bundle.ViewEducationTitle_endDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEducationLabel_details}"/>
+                    <h:outputText value="#{educationController.selected.details}" title="#{bundle.ViewEducationTitle_details}"/>
+                    <h:outputText value="#{bundle.ViewEducationLabel_userid}"/>
+                    <h:outputText value="#{educationController.selected.userid}" title="#{bundle.ViewEducationTitle_userid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{educationController.destroyAndView}" value="#{bundle.ViewEducationDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEducationEditLink}"/>
+                <br />
+                <h:commandLink action="#{educationController.prepareCreate}" value="#{bundle.ViewEducationCreateLink}" />
+                <br />
+                <h:commandLink action="#{educationController.prepareList}" value="#{bundle.ViewEducationShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEducationIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

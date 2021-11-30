@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewExperienceTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewExperienceLabel_id}"/>
+                    <h:outputText value="#{experienceController.selected.id}" title="#{bundle.ViewExperienceTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_company}"/>
+                    <h:outputText value="#{experienceController.selected.company}" title="#{bundle.ViewExperienceTitle_company}"/>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_position}"/>
+                    <h:outputText value="#{experienceController.selected.position}" title="#{bundle.ViewExperienceTitle_position}"/>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_startDate}"/>
+                    <h:outputText value="#{experienceController.selected.startDate}" title="#{bundle.ViewExperienceTitle_startDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_endDate}"/>
+                    <h:outputText value="#{experienceController.selected.endDate}" title="#{bundle.ViewExperienceTitle_endDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_details}"/>
+                    <h:outputText value="#{experienceController.selected.details}" title="#{bundle.ViewExperienceTitle_details}"/>
+                    <h:outputText value="#{bundle.ViewExperienceLabel_userid}"/>
+                    <h:outputText value="#{experienceController.selected.userid}" title="#{bundle.ViewExperienceTitle_userid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{experienceController.destroyAndView}" value="#{bundle.ViewExperienceDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewExperienceEditLink}"/>
+                <br />
+                <h:commandLink action="#{experienceController.prepareCreate}" value="#{bundle.ViewExperienceCreateLink}" />
+                <br />
+                <h:commandLink action="#{experienceController.prepareList}" value="#{bundle.ViewExperienceShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewExperienceIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

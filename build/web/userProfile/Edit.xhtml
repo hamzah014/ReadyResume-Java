@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUserProfileTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            
+            <ui:include src="/partial/bannerProfile.xhtml" />
+            
+            <!-- Portfolio Section -->
+            <section class="page-section portfolio" id="register">
+                <div class="container">
+
+
+                    <!-- Contact Section Form -->
+                    <div class="row">
+                        <div class="col-lg mx-auto">
+                            <!-- start content -->
+                            
+                            <!-- include profile tab partial -->
+                            <ui:include src="/partial/profiletab.xhtml" />
+
+                            <div class="">
+                                <div class="active contentz" id="basic_info">
+                                    <div class="content__wrapper" style="padding:5% 5% 0px 5%;">
+                                        <h2 class="text-color">Account Information</h2>
+                                        <hr/>
+                                        <h:form>
+                                            <div>
+                                                <div class="control-group">
+                                                    <h:panelGroup id="messagePanel" layout="block">
+                                                        <p><h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/></p>
+                                                    </h:panelGroup>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="form-group mb-0 pb-2">
+                                                        <label>Name</label>
+                                                        <h:inputText class="form-control" id="name" value="#{userProfileController.selected.name}" title="#{bundle.EditUserProfileTitle_name}" required="true" requiredMessage="#{bundle.EditUserProfileRequiredMessage_name}"/>
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+
+                                                <div class="control-group">
+                                                    <div class="form-group mb-0 pb-2">
+                                                        <label>Email</label>
+                                                        <span><i class="text-muted">** This email does not effect the your login email. Your login email will remain same as before. **</i></span>
+                                                        <h:inputText class="form-control" id="email" value="#{userProfileController.selected.email}" title="#{bundle.EditUserProfileTitle_email}" required="true" requiredMessage="#{bundle.EditUserProfileRequiredMessage_email}"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="form-group mb-0 pb-2">
+                                                        <label>Address</label>
+                                                        <h:inputTextarea class="form-control" rows="4" cols="30" id="address" value="#{userProfileController.selected.address}" title="#{bundle.EditUserProfileTitle_address}" required="true" requiredMessage="#{bundle.EditUserProfileRequiredMessage_address}"/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="form-group mb-0 pb-2">
+
+                                                        <div class="row">
+
+                                                            <div class="col-6">
+                                                                <label>Age</label>
+                                                                <h:inputText class="form-control" id="age" value="#{userProfileController.selected.age}" title="#{bundle.EditUserProfileTitle_age}" required="true" requiredMessage="#{bundle.EditUserProfileRequiredMessage_age}"/>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <label>Birthdate</label>
+                                                                <input class="form-control" onchange="selectDateTime()" id="calendar" type="date"/>
+                                                                <h:inputText style="display:none" class="form-control birthcls" id="birthdate" value="#{userProfileController.selected.birthdate}" title="#{bundle.EditUserProfileTitle_birthdate}" required="true" requiredMessage="#{bundle.EditUserProfileRequiredMessage_birthdate}">
+                                                                    <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                                                </h:inputText>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+                                                <div class="form-group">
+                                                    <h:commandLink class="btn btn-primary btn-xl text-white" action="#{userProfileController.update}" value="Update Info" />
+                                                </div>
+                                            </div>
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end content -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="py-4 text-center text-white">
+            </section>
+
+        </ui:define>
+    </ui:composition>
+
+</html>

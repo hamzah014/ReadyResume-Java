@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCertificateTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCertificateLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{certificateController.selected.id}" title="#{bundle.EditCertificateTitle_id}" required="true" requiredMessage="#{bundle.EditCertificateRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditCertificateLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{certificateController.selected.name}" title="#{bundle.EditCertificateTitle_name}" required="true" requiredMessage="#{bundle.EditCertificateRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.EditCertificateLabel_date}" for="date" />
+                    <h:inputText id="date" value="#{certificateController.selected.date}" title="#{bundle.EditCertificateTitle_date}" required="true" requiredMessage="#{bundle.EditCertificateRequiredMessage_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditCertificateLabel_details}" for="details" />
+                    <h:inputTextarea rows="4" cols="30" id="details" value="#{certificateController.selected.details}" title="#{bundle.EditCertificateTitle_details}" required="true" requiredMessage="#{bundle.EditCertificateRequiredMessage_details}"/>
+                    <h:outputLabel value="#{bundle.EditCertificateLabel_userid}" for="userid" />
+                    <h:selectOneMenu id="userid" value="#{certificateController.selected.userid}" title="#{bundle.EditCertificateTitle_userid}" required="true" requiredMessage="#{bundle.EditCertificateRequiredMessage_userid}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{certificateController.update}" value="#{bundle.EditCertificateSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCertificateViewLink}"/>
+                <br />
+                <h:commandLink action="#{certificateController.prepareList}" value="#{bundle.EditCertificateShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCertificateIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
