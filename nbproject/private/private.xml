@@ -3,17 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/UniKL/ReadyResume/web/experience/List.xhtml</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/ProfilePicture.java</file>
             <file>file:/E:/UniKL/ReadyResume/web/experience/Create.xhtml</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/Skills.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/Education.java</file>
+            <file>file:/E:/UniKL/ReadyResume/web/education/List.xhtml</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/Certificate.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/SkillsController.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/EducationController.java</file>
+            <file>file:/E:/UniKL/ReadyResume/web/resources/js/myjs.js</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/ProfileDesc.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/ProfileDescController.java</file>
             <file>file:/E:/UniKL/ReadyResume/web/template.xhtml</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/Users.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/UserProfileController.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/CertificateController.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/resources/Bundle.properties</file>
             <file>file:/E:/UniKL/ReadyResume/web/index.xhtml</file>
             <file>file:/E:/UniKL/ReadyResume/web/partial/profiletab.xhtml</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/UserProfile.java</file>
+            <file>file:/E:/UniKL/ReadyResume/src/java/jpa/entities/Template.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/ExperienceController.java</file>
             <file>file:/E:/UniKL/ReadyResume/src/java/jsf/UsersController.java</file>
             <file>file:/E:/UniKL/ReadyResume/web/education/Create.xhtml</file>

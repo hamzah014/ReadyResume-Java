@@ -269,22 +269,22 @@
 
                                                         <div class="row">
 
-
                                                             <div class="col-6">
                                                                 <label><h:outputLabel value="#{bundle.CreateExperienceLabel_startDate}" for="startDate" /></label>
-                                                                <input class="form-control" onchange="selectDateTime('endexp_val', 'endexp_date')" id="endexp_val" type="date"/>
-                                                                <h:inputText style="display:none" class="endexp_date" id="endDate" value="#{experienceController.selected.endDate}" title="#{bundle.CreateExperienceTitle_endDate}" required="true" requiredMessage="#{bundle.CreateExperienceRequiredMessage_endDate}">
+                                                                <input class="form-control" onchange="selectDateTime('srtexp_val', 'strexp_date')" id="srtexp_val" type="date"/>
+                                                                <h:inputText style="" class="strexp_date" id="startDate" value="#{experienceController.selected.startDate}" title="#{bundle.CreateExperienceTitle_startDate}" required="true" requiredMessage="#{bundle.CreateExperienceRequiredMessage_startDate}">
                                                                     <f:convertDateTime pattern="MM/dd/yyyy" />
                                                                 </h:inputText>
                                                             </div>
 
                                                             <div class="col-6">
-                                                                <label><h:outputLabel value="#{bundle.CreateExperienceLabel_endDate}" for="startDate" /></label>
-                                                                <input class="form-control" onchange="selectDateTime('srtexp_val', 'strexp_date')" id="srtexp_val" type="date"/>
-                                                                <h:inputText style="display:none" class="strexp_date" id="startDate" value="#{experienceController.selected.startDate}" title="#{bundle.CreateExperienceTitle_startDate}" required="true" requiredMessage="#{bundle.CreateExperienceRequiredMessage_startDate}">
+                                                                <label><h:outputLabel value="#{bundle.CreateExperienceLabel_endDate}" for="endDate" /></label>
+                                                                <input class="form-control" onchange="selectDateTime('endexp_val', 'endexp_date')" id="endexp_val" type="date"/>
+                                                                <h:inputText style="" class="endexp_date" id="endDate" value="#{experienceController.selected.endDate}" title="#{bundle.CreateExperienceTitle_endDate}" required="true" requiredMessage="#{bundle.CreateExperienceRequiredMessage_endDate}">
                                                                     <f:convertDateTime pattern="MM/dd/yyyy" />
                                                                 </h:inputText>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -327,6 +327,8 @@
                     document.getElementsByClassName('usercls')[0].value = id;
 
                 });
+
+
 
 
             </script>

@@ -265,7 +265,8 @@
                                                                 <f:facet name="header">
                                                                     <h:outputText value="Action"/>
                                                                 </f:facet>
-                                                                <h:commandLink class="btn btn-danger" action="#{skillsController.destroy}" value="Delete"/>
+                                                                <h:commandLink class="btn btn-info btn-sm" action="#{skillsController.prepareEdit}" value="Edit"/>
+                                                                <h:commandLink class="btn btn-danger btn-sm" action="#{skillsController.destroy}" value="Delete"/>
                                                             </h:column>
                                                         </h:dataTable>
                                                     </h:panelGroup>

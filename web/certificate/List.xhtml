@@ -237,7 +237,6 @@
                                                     <h:commandLink class="btn btn-success" action="#{certificateController.prepareCreate}" value="#{bundle.ListCertificateCreateLink}"/>
                                                 </div>
                                             </div>
-
                                             <!-- About Section Content -->
                                             <div class="row">
                                                 <div class="col-12">
@@ -271,7 +270,8 @@
                                                                 <f:facet name="header">
                                                                     <h:outputText value="Action"/>
                                                                 </f:facet>
-                                                                <h:commandLink class="btn btn-danger" action="#{certificateController.destroy}" value="Delete"/>
+                                                                <h:commandLink class="btn btn-info btn-sm" action="#{certificateController.prepareEdit}" value="Edit"/>
+                                                                <h:commandLink class="btn btn-danger btn-sm" action="#{certificateController.destroy}" value="Delete"/>
                                                             </h:column>
                                                         </h:dataTable>
                                                     </h:panelGroup>

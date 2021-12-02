@@ -128,9 +128,10 @@ public class ExperienceController implements Serializable {
 
     public String update() {
         try {
+            System.out.println("cr = " + current);
             getFacade().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/resources/Bundle").getString("ExperienceUpdated"));
-            return "View";
+            return prepareList();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/resources/Bundle").getString("PersistenceErrorOccured"));
             return null;
@@ -143,7 +144,7 @@ public class ExperienceController implements Serializable {
         performDestroy();
         recreatePagination();
         recreateModel();
-        return "List";
+        return prepareList();
     }
 
     public String destroyAndView() {
