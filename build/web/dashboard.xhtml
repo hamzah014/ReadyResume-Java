@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Dashboard"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            
+        
+            
+            <section class="page-section portfolio" id="portfolio">
+                <div class="container">
+
+                    <!-- Masthead Heading -->
+                    <h1 class="masthead-heading text-center bg-info text-uppercase mb-0">Dashboard</h1>
+                    
+                    <!-- Portfolio Grid Items -->
+                    <div class="row row-area">
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon btn-sm" library="img" name="icon/users.png" />
+                                <h3>Registered Users</h3>
+                                <h1><h:outputText value="#{adminController.userTotal}"></h:outputText></h1>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 1 -->
+                        <div class="col list-border">
+                            <div class="portfolio-item mx-auto">
+                                <div class=" d-flex align-items-center justify-content-center h-100 w-100">
+                                    <div class=" text-center text-white">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <h:graphicImage class="img-fluid img-icon" library="img" name="icon/cv.svg" />
+                                <h3>Available Template</h3>
+                                <h1>1</h1>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+
+
+
+            </section>
+
+
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>

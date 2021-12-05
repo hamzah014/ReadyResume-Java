@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Default Title</ui:insert></title>
         <link rel="icon" type="image/png/svg" href="resources/img/icon/cv.svg"/>
-        
+
 
         <!-- Custom fonts for this theme -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
@@ -135,6 +135,11 @@
                 border-radius: 90%;
                 display: inline-block;
             }
+            
+            .btn-black{
+                background-color: black;
+                color:white;
+            }
 
         </style>
 
@@ -160,6 +165,7 @@
                         </li>
 
                         <c:set var="test" scope="session" value="#{sessionScope['userid']}" />
+                        <c:set var="role" scope="session" value="#{sessionScope['userrole']}" />
 
                         <c:if test="${empty test}">
 
@@ -171,12 +177,28 @@
 
                         <c:if test="${not empty test}">
 
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/myResume" value="My Resume"/>
-                            </li>
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/myprofile" value="My Profile"/>
-                            </li>
+                            <c:if test="${role == 'admin'}">
+
+                                <li class="nav-item mx-0 mx-lg-1">
+                                    <h:form>
+                                        <h:commandLink class="nav-link py-3 px-0 px-lg-3 rounded" action="#{usersController.prepareList}" value="User List" />
+                                    </h:form>
+                                </li>
+
+
+                            </c:if>
+
+                            <c:if test="${role == 'user'}">
+
+                                <li class="nav-item mx-0 mx-lg-1">
+                                    <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/myResume" value="My Resume"/>
+                                </li>
+                                <li class="nav-item mx-0 mx-lg-1">
+                                    <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/myprofile" value="My Profile"/>
+                                </li>
+
+                            </c:if>
+
                             <li class="nav-item mx-0 mx-lg-1">
                                 <h:form>
                                     <h:commandLink class="nav-link py-3 px-0 px-lg-3 rounded" action="#{usersController.logout}" value="Logout" />
@@ -202,6 +224,7 @@
         <section class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>Copyright &copy; ReadyResume 2021</small>
+                <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/admin/Login" value="Admin Login Here"/>
             </div>
         </section>
 

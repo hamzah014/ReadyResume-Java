@@ -69,9 +69,14 @@ public class UsersController implements Serializable {
         return pagination;
     }
 
-    public String prepareList() {
+    public String prepareList() throws IOException {
         recreateModel();
-        return "List";
+
+        ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
+
+        System.out.println("path - " + context.getRequestContextPath());
+        context.redirect(context.getRequestContextPath() + "/faces/users/List.xhtml");
+        return "";
     }
 
     public String prepareView() {
@@ -102,8 +107,13 @@ public class UsersController implements Serializable {
                 System.out.println("id user - " + current.getId());
 
                 int userid = current.getId();
+                String userrole = "user";
+
                 HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+
                 session.setAttribute("userid", userid);
+                session.setAttribute("userrole", userrole);
+
                 ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 
                 System.out.println("path - " + context.getRequestContextPath());
@@ -127,7 +137,10 @@ public class UsersController implements Serializable {
     public String logout() throws IOException {
 
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+
         session.removeAttribute("userid");
+        session.removeAttribute("userrole");
+
         ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 
         System.out.println("path - " + context.getRequestContextPath());
@@ -171,7 +184,7 @@ public class UsersController implements Serializable {
             System.out.println("path - " + context.getRequestContextPath());
             context.redirect(context.getRequestContextPath() + "/faces/users/Edit.xhtml");
             return "";
-            
+
         } catch (Exception e) {
             System.out.println("err - " + e.getMessage());
             return null;

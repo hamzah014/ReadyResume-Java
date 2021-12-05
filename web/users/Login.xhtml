@@ -58,19 +58,18 @@
                             <h:panelGroup id="messagePanel" layout="block">
                                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                             </h:panelGroup>
-                            #{sessionScope['userid']}
                             <h:form>
                                 <div class="control-group">
                                     <div class="form-group mb-0 pb-2">
                                         <h:outputLabel value="#{bundle.CreateUsersLabel_email}" for="email" />
-                                        <h:inputText class="form-control" id="email" value="#{usersController.selected.email}" title="#{bundle.CreateUsersTitle_email}" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_email}"/>
+                                        <h:inputText class="form-control" id="email" value="#{usersController.selected.email}" title="Email" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_email}"/>
 
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="form-group mb-0 pb-2">
                                         <h:outputLabel value="#{bundle.CreateUsersLabel_password}" for="password" />
-                                        <h:inputText class="form-control" id="password" value="#{usersController.selected.password}" title="#{bundle.CreateUsersTitle_password}" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_password}"/>
+                                        <h:inputText class="form-control" id="password" value="#{usersController.selected.password}" title="Password" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_password}"/>
 
                                     </div>
                                 </div>
