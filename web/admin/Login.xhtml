@@ -26,20 +26,22 @@
                                 <h:form class="tm-login-form">
                                     <div class="input-group">
                                         <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Username</label>
-                                        <h:inputText class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email" value="#{adminController.selected.email}" title="Email" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_email}"/>
+                                        <h:inputText class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email" value="#{adminController.selected.email}" title="Email" required="true" requiredMessage="Please enter username."/>
 
                                     </div>
                                     <div class="input-group mt-3">
                                         <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Password</label>
-                                        <h:inputText class="form-control validate" id="password" value="#{adminController.selected.password}" title="Password" required="true" requiredMessage="#{bundle.CreateUsersRequiredMessage_password}"/>
+                                        <h:inputText class="form-control validate" id="password" value="#{adminController.selected.password}" title="Password" required="true" requiredMessage="Please enter password."/>
 
                                     </div>
                                     <div class="input-group mt-3">
-                                        <h:commandLink class="btn btn-primary d-inline-block mx-auto" action="#{adminController.login}" value="Login" />
+                                        <h:commandLink class="btn btn-success d-inline-block mx-auto" action="#{adminController.login}" value="Login" />
                                     </div>
                                     <div class="input-group mt-3">
+                                        <h:link class="btn btn-warning d-inline-block mx-auto" outcome="/index" value="Go to Home page."/>
                                     </div>
                                 </h:form>
+
                             </div>
                         </div>
                     </div>

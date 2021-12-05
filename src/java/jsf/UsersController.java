@@ -136,6 +136,9 @@ public class UsersController implements Serializable {
 
     public String logout() throws IOException {
 
+        current = new Users();
+        selectedItemIndex = -1;
+        
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
 
         session.removeAttribute("userid");
@@ -191,12 +194,23 @@ public class UsersController implements Serializable {
         }
 
     }
+    
+    
+    public String prepareEditAdmin() {
+        current = (Users) getItems().getRowData();
+        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        return "EditAdmin";
+    }
 
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/resources/Bundle").getString("UsersUpdated"));
-            return prepareEdit();
+            
+            ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
+            System.out.println("path - " + context.getRequestContextPath());
+            context.redirect(context.getRequestContextPath() + "/faces/users/List.xhtml");
+            return "";
+            
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/resources/Bundle").getString("PersistenceErrorOccured"));
             return null;

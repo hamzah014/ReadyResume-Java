@@ -135,7 +135,7 @@
                 border-radius: 90%;
                 display: inline-block;
             }
-            
+
             .btn-black{
                 background-color: black;
                 color:white;
@@ -153,7 +153,7 @@
                 <h:link class="navbar-brand js-scroll-trigger" outcome="/index" value="ReadyResume"/>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
-                    <i class="fas fa-bars"></i>
+                    <i class="fa fa-1x">&#8801;</i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
@@ -185,6 +185,12 @@
                                     </h:form>
                                 </li>
 
+                                <li class="nav-item mx-0 mx-lg-1">
+                                    <h:form>
+                                        <h:commandLink class="nav-link py-3 px-0 px-lg-3 rounded" action="#{adminController.logout}" value="Logout" />
+                                    </h:form>
+                                </li>
+
 
                             </c:if>
 
@@ -197,13 +203,12 @@
                                     <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/myprofile" value="My Profile"/>
                                 </li>
 
+                                <li class="nav-item mx-0 mx-lg-1">
+                                    <h:form>
+                                        <h:commandLink class="nav-link py-3 px-0 px-lg-3 rounded" action="#{usersController.logout}" value="Logout" />
+                                    </h:form>
+                                </li>
                             </c:if>
-
-                            <li class="nav-item mx-0 mx-lg-1">
-                                <h:form>
-                                    <h:commandLink class="nav-link py-3 px-0 px-lg-3 rounded" action="#{usersController.logout}" value="Logout" />
-                                </h:form>
-                            </li>
 
 
                         </c:if>
@@ -224,7 +229,10 @@
         <section class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>Copyright &copy; ReadyResume 2021</small>
-                <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/admin/Login" value="Admin Login Here"/>
+
+                <c:if test="${empty test}">
+                    <h:link class="nav-link py-3 px-0 px-lg-3 rounded" outcome="/admin/Login" value="Admin Login Here"/>
+                </c:if>
             </div>
         </section>
 

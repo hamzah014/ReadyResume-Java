@@ -90,7 +90,7 @@ public class AdminController implements Serializable {
 
     public String loginView() {
         current = new Admin();
-        selectedItemIndex = -1;;
+        selectedItemIndex = -1;
         return "Login";
     }
 
@@ -139,6 +139,9 @@ public class AdminController implements Serializable {
     }
 
     public String logout() throws IOException {
+        
+        current = new Admin();
+        selectedItemIndex = -1;
 
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
         
